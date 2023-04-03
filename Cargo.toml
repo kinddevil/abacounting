@@ -6,3 +6,37 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+tokio = { version = "1", features = ["full"] }
+mini-redis = "0.4"
+axum = "0"
+hyper = { version = "0", features = ["full"] }
+tower = { version = "0.4", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+tower-http = { version = "0", features = ["add-extension", "trace"] }
+tracing = "0"
+tracing-subscriber = { version = "0", features = ["env-filter"] }
+uuid = { version = "1", features = ["serde", "v4"] }
+
+
+[profile.release]
+opt-level = 3
+debug = false
+debug-assertions = false
+overflow-checks = false
+lto = false
+panic = 'unwind'
+incremental = false
+codegen-units = 16
+rpath = false
+
+[profile.dev]
+opt-level = 0
+debug = true
+split-debuginfo = '...'  # Platform-specific.
+debug-assertions = true
+overflow-checks = true
+lto = false
+panic = 'unwind'
+incremental = true
+codegen-units = 256
+rpath = false
