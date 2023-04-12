@@ -8,7 +8,7 @@ edition = "2021"
 [dependencies]
 tokio = { version = "1", features = ["full"] }
 mini-redis = "0.4"
-axum = "0"
+axum = { version = "0", features = ["headers"] }
 hyper = { version = "0", features = ["full"] }
 tower = { version = "0.4", features = ["full"] }
 serde = { version = "1.0", features = ["derive"] }
@@ -16,6 +16,8 @@ tower-http = { version = "0", features = ["add-extension", "trace"] }
 tracing = "0"
 tracing-subscriber = { version = "0", features = ["env-filter"] }
 uuid = { version = "1", features = ["serde", "v4"] }
+axum-extra = "0"
+serde_json = "1.0.95"
 
 
 [profile.release]
