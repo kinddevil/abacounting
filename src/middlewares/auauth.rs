@@ -58,7 +58,7 @@ pub async fn auth<B>(
 }
 
 fn token_is_valid(token: &str) -> bool {
-  println!("{}", token);
+  tracing::info!("got token {}...", token);
   true
 }
 

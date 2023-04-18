@@ -7,6 +7,7 @@ edition = "2021"
 
 [dependencies]
 tokio = { version = "1", features = ["full"] }
+tokio-util = "0.7.7"
 mini-redis = "0.4"
 axum = { version = "0", features = ["headers"] }
 hyper = { version = "0", features = ["full"] }
@@ -18,6 +19,9 @@ tracing-subscriber = { version = "0", features = ["env-filter"] }
 uuid = { version = "1", features = ["serde", "v4"] }
 axum-extra = "0"
 serde_json = "1.0.95"
+tower-service = "0.3.2"
+futures-core = "0.3.28"
+pin-project-lite = "0.2.9"
 
 
 [profile.release]
